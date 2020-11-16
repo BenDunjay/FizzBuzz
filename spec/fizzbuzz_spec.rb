@@ -10,10 +10,6 @@ RSpec.describe FizzBuzz do
     it " works with no argument" do
       expect(FizzBuzz).to respond_to(:new).with(1).arguments
     end
-
-    it "does not accept arguments" do
-      expect(FizzBuzz).not_to respond_to(:new).with(0).argument
-    end
   end
 
   describe "#fizzbuzz_action method" do
@@ -26,14 +22,14 @@ RSpec.describe FizzBuzz do
 
     context "is divisible by 5" do
       let(:divisible_by_5) { FizzBuzz.new(5) }
-      it "will return `Fizz` if the number is divisible by 3 " do
+      it "will return `Fizz` if the number is divisible by 5 " do
         expect(divisible_by_5.fizzbuzz_action).to eq([1, 2, "Fizz", 4, "Buzz"])
       end
     end
 
     context "is divisible by 3 and 5" do
       let(:divisible_by_3_and_5) { FizzBuzz.new(15) }
-      it "will return `Fizz` if the number is divisible by 3 " do
+      it "will return `Fizz` if the number is divisible by 3 and 5 " do
         expect(divisible_by_3_and_5.fizzbuzz_action).to eq([1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"])
       end
     end
